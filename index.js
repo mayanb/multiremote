@@ -7,7 +7,7 @@ var path = require("path");
 // var app = express();
 // var server = require('http').createServer(app);
 // var sio = io.listen(server);
-// var port = process.env.PORT || 5000;
+var port = process.env.PORT || 5000;
 
 //app.set('port', port);
 // app.use(express.static(__dirname + "/"));
@@ -60,7 +60,7 @@ io.on('connection', function(socket){
   });
 });
 
-http.listen(5000, function(){
+http.listen(port, function(){
   console.log('listening on *:5000');
 });
 // app.listen(port);
