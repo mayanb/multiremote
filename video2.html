@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <style>
+      body {
+        font-family: "Helvetica Neue", helvetica, arial;
+        padding: 15px;
+      }
+
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      ul li {
+        line-height: 1.4;
+      }
+    </style>
+
+
+  </head>
+  <body>
+    <h1>Video 2</h1>
+   <!--  <video id="myVideo" width="320" height="176">
+      <source src="seattletimelapse2.mp4" type="video/mp4">
+    </video> -->
+    <div id="player"></div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      var socket = io();
+
+      // var vid = document.getElementById("myVideo"); 
+      var tag = document.createElement('script');
+
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+          height: '390',
+          width: '640',
+          videoId: 'DL2ZcqSRnzU',
+        });
+      }
+
+      socket.on('pause message', function(msg){
+        console.log("pause message received");
+        player.pauseVideo();
+        // vid.pause();
+      });
+
+      socket.on('play message', function(msg){
+        console.log("play message received");
+        player.playVideo();
+        // vid.play();
+      });
+
+    </script>
+  </body>
+</html>
