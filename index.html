@@ -3,35 +3,36 @@
   <head>
     <title>Socket.IO chat</title>
     <style>
-      * { margin: 0; padding: 0; box-sizing: border-box; }
-      body { font: 13px Helvetica, Arial; }
-      form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
-      form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
-      form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
-      #messages { list-style-type: none; margin: 0; padding: 0; }
+      /** { margin: 0; padding: 0; box-sizing: border-box; }*/
+      body { font: 20px Helvetica, Arial; }
+      /*form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
+      form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }*/
+      /*button { width: 40px; height: 30px; background: rgb(130, 224, 255); border: 20px; padding: 10px; }*/
+      button { background-color: #4CAF50; border: 5px; color: white; padding: 30px 45px; text-align: center; text-decoration: none; display: inline-block; font-size: 20px;}
+     /* #messages { list-style-type: none; margin: 0; padding: 0; }
       #messages li { padding: 5px 10px; }
-      #messages li:nth-child(odd) { background: #eee; }
+      #messages li:nth-child(odd) { background: #eee; }*/
     </style>
   </head>
   <body>
-    <ul id="messages"></ul>
+    <!-- <ul id="messages"></ul> -->
     
-    <form action="">
+    <!-- <form action="">
       <input id="m" autocomplete="off" /><button>Submit</button>
-    </form>
+    </form> -->
 
-
+    <div></div>
     <button id="playbutton" type="button">Play Video</button>
     <button id="pausebutton" type="button">Pause Video</button><br> 
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
     <script>
       var socket = io();
-      $('form').submit(function(){
-        socket.emit('chat message', $('#m').val());
-        $('#m').val('');
-        return false;
-      });
+      // $('form').submit(function(){
+      //   socket.emit('chat message', $('#m').val());
+      //   $('#m').val('');
+      //   return false;
+      // });
 
 
       document.getElementById("pausebutton").addEventListener("click", function(){
