@@ -6,7 +6,10 @@
 <body>
 <video controls ></video>
 <canvas style="visibillity: hidden"></canvas>
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
 <script>
+var socket = io();
 (function(navigator, videoElement, canvasElement){
   var video = {
     element: videoElement,
@@ -81,6 +84,7 @@
     if(motionState.changed) {
       // call events
       console.log('ACTIVITY!');
+      socket.emit('motion message', "hello");
       motionState.changed = false;
     }
     canvas.frame++;

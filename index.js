@@ -62,6 +62,14 @@ io.on('connection', function(socket){
   	console.log("play videos");
   	io.emit('play message', "hello");
   });
+
+  socket.on('motion message', function(){
+    console.log("motion detected");
+    // io.emit('play message', "hello");
+    io.emit('play message', "hello");
+  });
+
+
 });
 
 http.listen(port, function(){
