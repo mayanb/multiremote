@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Webcam</title>
+    <style>
+      body { font: 20px Helvetica, Arial; }
+      
+      button { background-color: #4CAF50; border: 5px; color: white; padding: 30px 45px; text-align: center; text-decoration: none; display: inline-block; font-size: 20px; border-radius: 12px;}
+    </style>
+  </head>
+  <body>
+
+    <video autoplay></video>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script>
+      var socket = io();
+      
+
+      // document.getElementById("pausebutton").addEventListener("click", function(){
+      //     console.log("paused");
+      //     socket.emit('pause message', "hello");
+      //     return false;
+      // });
+
+      // document.getElementById("playbutton").addEventListener("click", function(){
+      //     console.log("played");
+      //     socket.emit('play message', "hello");
+      //     return false;
+      // });
+        var errorCallback = function(e) {
+          console.log('Reeeejected!', e);
+        };
+        navigator.getUserMedia = ( navigator.getUserMedia ||
+                       navigator.webkitGetUserMedia ||
+                       navigator.mozGetUserMedia ||
+                       navigator.msGetUserMedia);
+
+
+        // Not showing vendor prefixes.
+        navigator.getUserMedia({video: true, audio: true}, function(localMediaStream) {
+          var video = document.querySelector('video');
+          video.src = window.URL.createObjectURL(localMediaStream);
+
+          // Note: onloadedmetadata doesn't fire in Chrome when using it with getUserMedia.
+          // See crbug.com/110938.
+          video.onloadedmetadata = function(e) {
+            console.log("asdfasdfasdfas")
+            // Ready to go. Do some stuff.
+          };
+        }, errorCallback);
+
+    </script>
+  </body>
+</html>

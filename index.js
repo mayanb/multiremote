@@ -37,6 +37,10 @@ app.get('/video3', function(req, res){
   res.sendFile(path.join(__dirname+'/video3.html'));
 });
 
+app.get('/webcam', function(req, res) {
+  res.sendFile(path.join(__dirname+'/webcam.html'));
+})
+
 
 
 io.on('connection', function(socket){
