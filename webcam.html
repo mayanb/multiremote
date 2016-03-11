@@ -11,7 +11,6 @@
 <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
 <script>
 var socket = io();
-
 (function(navigator, videoElement, canvasElement){
   var video = {
     element: videoElement,
@@ -95,8 +94,8 @@ var socket = io();
 
       console.log('ACTIVITY!');
       if (firstMotion) {
-        socket.emit('motion message', firstMotion.toString());
-        firstMotion = false;
+        socket.emit('motion message', "hello");
+        // firstMotion = false;
       }
       motionState.changed = false;
     }

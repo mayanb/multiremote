@@ -84,7 +84,7 @@ io.on('connection', function(socket){
   });
 
   socket.on('motion message', function(){
-    // io.emit('play message', "hello");
+    io.emit('play message', "hello");
     
     console.log("motion detected");
     // io.emit('play message', "hello");
