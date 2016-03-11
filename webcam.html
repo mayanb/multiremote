@@ -10,18 +10,19 @@
 <script src="/socket.io/socket.io.js"></script>
 <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
 <script>
-
-  socket.on('refresh message', function(msg){
-    console.log("refresh message received");
-    // player.seekTo(0, false);
-    location.reload();
-
-    // vid.pause();
-
-  });
-
 var socket = io();
 var firstMotion = true;
+
+
+socket.on('refresh message', function(msg){
+  console.log("refresh message received");
+  // player.seekTo(0, false);
+  location.reload();
+
+  // vid.pause();
+
+});
+  
 (function(navigator, videoElement, canvasElement){
   var video = {
     element: videoElement,
