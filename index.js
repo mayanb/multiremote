@@ -27,14 +27,14 @@ var authToken = '[AuthToken]';
 // //require the Twilio module and create a REST client 
 var client = require('twilio')(accountSid, authToken); 
  
-    client.messages.create({ 
-      body: "HI TD",
-      to: "+14257376428" 
-      from: "+18312469397",    
-    }, function(err, message) {
-      process.stdout.write(message.sid) 
-      console.log(message.sid); 
-    });
+    // client.messages.create({ 
+    //   body: "HI TD",
+    //   to: "+14257376428" 
+    //   from: "+18312469397",    
+    // }, function(err, message) {
+    //   process.stdout.write(message.sid) 
+    //   console.log(message.sid); 
+    // });
 
 
 app.get('/', function(req, res){
