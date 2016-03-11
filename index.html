@@ -24,7 +24,7 @@
     <div></div>
     <button id="playbutton" type="button">Play Video</button>
     <button id="stopbutton" type="button">Stop Video</button>
-    <button id="pausebutton" type="button">Refresh Video</button><br> 
+    <button id="refreshbutton" type="button">Refresh Video</button><br> 
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
     <script>
@@ -36,9 +36,9 @@
       // });
 
 
-      document.getElementById("pausebutton").addEventListener("click", function(){
-          console.log("paused");
-          socket.emit('pause message', "hello");
+      document.getElementById("refreshbutton").addEventListener("click", function(){
+          console.log("refreshed");
+          socket.emit('refresh message', "hello");
           return false;
       });
 
