@@ -13,16 +13,6 @@
 var socket = io();
 var firstMotion = true;
 
-
-socket.on('refresh message', function(msg){
-  console.log("refresh message received");
-  // player.seekTo(0, false);
-  location.reload();
-
-  // vid.pause();
-
-});
-  
 (function(navigator, videoElement, canvasElement){
   var video = {
     element: videoElement,
