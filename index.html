@@ -70,8 +70,8 @@
       });
 
       document.getElementById("startmotion").addEventListener("click", function(){
-          console.log("stopmotion");
-          socket.emit('stop motion message', "hello");
+          console.log("startmotion");
+          socket.emit('start motion message', "hello");
           return false;
       });
 
