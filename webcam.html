@@ -88,7 +88,7 @@ var socket = io();
         firstMotion = false
       });
 
-      socket.on('stop motion message', function(msg){
+      socket.on('start motion message', function(msg){
         firstMotion = true
       });
 
