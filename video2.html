@@ -62,6 +62,14 @@
         // vid.play();
       });
 
+      socket.on('pause message', function(msg){
+        console.log("pause message received");
+        // player.seekTo(0, false);
+        player.pauseVideo();
+        // vid.pause();
+
+      });
+
       socket.on('play message', function(msg){
         console.log("play message received");
         player.playVideo();

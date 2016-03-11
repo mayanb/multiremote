@@ -23,6 +23,7 @@
 
     <div></div>
     <button id="playbutton" type="button">Play Video</button>
+    <button id="pausebutton" type="button">Pause Video</button><br>
     <button id="stopbutton" type="button">Stop Video</button>
     <button id="refreshbutton" type="button">Refresh Video</button> <br>
     <button id="stopmotion" type="button">Stop Motion</button>
@@ -53,6 +54,12 @@
       document.getElementById("playbutton").addEventListener("click", function(){
           console.log("played");
           socket.emit('play message', "hello");
+          return false;
+      });
+
+      document.getElementById("pausebutton").addEventListener("click", function(){
+          console.log("paused");
+          socket.emit('pause message', "hello");
           return false;
       });
 

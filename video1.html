@@ -61,6 +61,14 @@
 
       });
 
+      socket.on('pause message', function(msg){
+        console.log("pause message received");
+        // player.seekTo(0, false);
+        player.pauseVideo();
+        // vid.pause();
+
+      });
+
       socket.on('stop message', function(msg){
         console.log("move to start message received");
         player.seekTo(0, false);
