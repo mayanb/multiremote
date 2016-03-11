@@ -123,7 +123,7 @@ io.on('connection', function(socket){
     client.sendSms({
         to:'+14257376428',
         from:'+18312469397',
-        body:'Thank you for visiting narnia. Remember to stay hydrated.'
+        body:'thank you for visiting narnia. remember to think positive thoughts throughout the day!'
     }, function(error, message) {
         
         if (!error) {
