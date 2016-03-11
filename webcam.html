@@ -82,8 +82,9 @@ var socket = io();
         }
       }
     }
-    firstMotion = true;
+    
     if(motionState.changed) {
+      firstMotion = true;
       // socket.on('stop motion message', function(msg){
       //   firstMotion = false
       // });
