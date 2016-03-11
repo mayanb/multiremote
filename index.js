@@ -87,7 +87,7 @@ io.on('connection', function(socket){
   });
 
   socket.on('motion message', function(){
-    if (motionNum == 1){
+    if (motionNum <= 1){
       io.emit('play message', "hello");  
       motionNum += 1;
     }
