@@ -83,7 +83,6 @@ var socket = io();
         }
       }
     }
-
     firstMotion = true;
     if(motionState.changed) {
       // socket.on('stop motion message', function(msg){
@@ -98,8 +97,6 @@ var socket = io();
       if (firstMotion) {
         socket.emit('motion message', firstMotion.toString());
         firstMotion = false;
-        // return false;
-        
       }
       motionState.changed = false;
     }
