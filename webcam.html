@@ -84,18 +84,18 @@ var socket = io();
     }
     firstMotion = true;
     if(motionState.changed) {
-      socket.on('stop motion message', function(msg){
-        firstMotion = false
-      });
+      // socket.on('stop motion message', function(msg){
+      //   firstMotion = false
+      // });
 
-      socket.on('start motion message', function(msg){
-        firstMotion = true
-      });
+      // socket.on('start motion message', function(msg){
+      //   firstMotion = true
+      // });
 
       console.log('ACTIVITY!');
       if (firstMotion) {
         socket.emit('motion message', "hello");
-        // firstMotion = false;
+        firstMotion = false;
       }
       motionState.changed = false;
     }
