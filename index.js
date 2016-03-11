@@ -63,6 +63,11 @@ io.on('connection', function(socket){
   	io.emit('play message', "hello");
   });
 
+  socket.on('stop message', function(){
+    console.log("stop videos");
+    io.emit('stop message', "hello");
+  });
+
   socket.on('motion message', function(){
     console.log("motion detected");
     // io.emit('play message', "hello");
