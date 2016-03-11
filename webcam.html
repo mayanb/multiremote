@@ -98,7 +98,7 @@ var socket = io();
       if (firstMotion) {
         socket.emit('motion message', firstMotion.toString());
         firstMotion = false;
-        return false;
+        // return false;
         
       }
       motionState.changed = false;
