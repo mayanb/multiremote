@@ -21,9 +21,9 @@ var motionNum = 0;
 // });
 
 // var twilio = require("path/to/twilio-node/lib");
-// var twilio = require('twilio')
-// var accountSid = 'ACa697c9d4bf3cf9f0ce5a8783e2538903'; 
-// var authToken = '[AuthToken]'; 
+var twilio = require('twilio')
+var accountSid = 'ACa697c9d4bf3cf9f0ce5a8783e2538903'; 
+var authToken = '[AuthToken]'; 
 
 // // //require the Twilio module and create a REST client 
 // var client = require('twilio')(accountSid, authToken); 
