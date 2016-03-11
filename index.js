@@ -33,11 +33,11 @@ var client = require('twilio')(accountSid, authToken);
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
   client.messages.create({ 
-      body: "HI TD",
-      to: "+14257376428" 
+      // body: "HI TD",
+      // to: "+14257376428" 
       from: "+18312469397",    
     }, function(err, message) {
-      process.stdout.write(message.sid) 
+      // process.stdout.write(message.sid) 
       console.log(message.sid); 
     });
 
