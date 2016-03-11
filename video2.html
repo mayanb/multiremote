@@ -42,14 +42,14 @@
           height: '390',
           width: '640',
           videoId: 'nTcp114z_-o',
-          playerVars: { 'autoplay': 0, 'controls': 0 },
+          playerVars: {0, 0},
         });
       }
 
       socket.on('pause message', function(msg){
         console.log("pause message received");
         player.pauseVideo();
-        player.seekTo(seconds:0, allowSeekAhead:false);
+        player.seekTo(0, false);
         // vid.pause();
       });
 
