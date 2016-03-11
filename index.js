@@ -25,9 +25,17 @@ var motionNum = 0;
 // var accountSid = 'ACa697c9d4bf3cf9f0ce5a8783e2538903'; 
 // var authToken = '[AuthToken]'; 
 
-// // //require the Twilio module and create a REST client 
+// // // //require the Twilio module and create a REST client 
 // var client = require('twilio')(accountSid, authToken); 
- 
+
+var twilio = require('twilio');
+var accountSid = 'ACa697c9d4bf3cf9f0ce5a8783e2538903'; 
+var authToken = '03e0108ea758839fb036e6b26f0ae2df'; 
+
+// // //require the Twilio module and create a REST client 
+var client = require('twilio')(accountSid, authToken); 
+
+
 
 
 app.get('/', function(req, res){
@@ -53,7 +61,9 @@ app.get('/webcam', function(req, res) {
   res.sendFile(path.join(__dirname+'/webcam.html'));
 })
 
-
+app.get('/sms', function(req, res) {
+  res.sendFile(path.join(__dirname+'/sms.html'));
+})
 
 io.on('connection', function(socket){
   console.log('a user connected');
@@ -106,6 +116,29 @@ io.on('connection', function(socket){
     console.log("motion detected");
     // io.emit('play message', "hello");
     
+  });
+
+  socket.on('send text', function() {
+    console.log("send text");
+    client.sendSms({
+        to:'+14257376428',
+        from:'+18312469397',
+        body:'Thank you for visiting narnia. Remember to stay hydrated.'
+    }, function(error, message) {
+        
+        if (!error) {
+            
+            console.log('Success! The SID for this SMS message is:');
+            console.log(message.sid);
+     
+            console.log('Message sent on:');
+            console.log(message.dateCreated);
+        } else {
+            console.log(error);
+            console.log('Oops! There was an error.');
+        }
+    });
+ 
   });
 
 

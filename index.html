@@ -28,6 +28,7 @@
     <!-- <button id="refreshbutton" type="button">Refresh Video</button> <br> -->
     <!-- <button id="stopmotion" type="button">Stop Motion</button><br> -->
     <button id="startmotion" type="button">Start Motion</button><br> 
+    <button id="sendtext" type="button">Send Text</button><br> 
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
     <script>
@@ -72,6 +73,12 @@
       document.getElementById("startmotion").addEventListener("click", function(){
           console.log("startmotion");
           socket.emit('start motion message', "hello");
+          return false;
+      });
+
+      document.getElementById("sendtext").addEventListener("click", function(){
+          console.log("sendtext");
+          socket.emit('send text', "hello");
           return false;
       });
 
