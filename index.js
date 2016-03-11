@@ -73,7 +73,6 @@ io.on('connection', function(socket){
   socket.on('stop message', function(){
     console.log("stop videos");
     io.emit('stop message', "hello");
-    motionNum = 3
   });
 
   socket.on('stop motion message', function(){
@@ -84,10 +83,11 @@ io.on('connection', function(socket){
   socket.on('start motion message', function(){
     console.log("start motion");
     io.emit('start motion message', "hello");
+    motionNum = 1
   });
 
   socket.on('motion message', function(){
-    if (motionNum <= 3){
+    if (motionNum == 1){
       io.emit('play message', "hello");  
       motionNum += 1;
     }
