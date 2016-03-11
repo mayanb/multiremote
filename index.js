@@ -4,6 +4,7 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 // var express = require("express");
 var path = require("path");
+var twilio = require("path/to/twilio-node/lib");
 // var app = express();
 // var server = require('http').createServer(app);
 // var sio = io.listen(server);
@@ -18,6 +19,14 @@ var motionNum = 0;
 // server.listen(app.get('port'), function() {
 // 	console.log('Express listening on port ' + app.get('port'));
 // });
+
+var accountSid = 'ACa697c9d4bf3cf9f0ce5a8783e2538903'; 
+var authToken = '[AuthToken]'; 
+
+//require the Twilio module and create a REST client 
+var client = require('twilio')(accountSid, authToken); 
+ 
+
 
 
 app.get('/', function(req, res){
@@ -63,6 +72,14 @@ io.on('connection', function(socket){
   socket.on('play message', function(){
   	console.log("play videos");
   	io.emit('play message', "hello");
+    client.messages.create({ 
+      body: "HI TD",
+      to: "+14257376428" 
+      from: "+18312469397",    
+    }, function(err, message) {
+      process.stdout.write(message.sid) 
+      console.log(message.sid); 
+    });
   });
 
   socket.on('pause message', function(){
