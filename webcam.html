@@ -84,7 +84,14 @@ var socket = io();
     }
     firstMotion = true;
     if(motionState.changed) {
-      // call events
+      socket.on('stop motion message', function(msg){
+        firstMotion = false
+      });
+
+      socket.on('stop motion message', function(msg){
+        firstMotion = true
+      });
+
       console.log('ACTIVITY!');
       if (firstMotion) {
         socket.emit('motion message', "hello");
