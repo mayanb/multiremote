@@ -11,7 +11,6 @@
 <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
 <script>
 var socket = io();
-var firstMotion = true;
 
 (function(navigator, videoElement, canvasElement){
   var video = {
@@ -84,7 +83,8 @@ var firstMotion = true;
         }
       }
     }
-
+    
+    firstMotion = true;
     if(motionState.changed) {
       // socket.on('stop motion message', function(msg){
       //   firstMotion = false
