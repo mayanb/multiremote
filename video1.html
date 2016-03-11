@@ -53,8 +53,9 @@
       //~~~~~~~~~~~~~~~~~
       socket.on('pause message', function(msg){
         console.log("pause message received");
-        player.pauseVideo();
         player.seekTo(0, false);
+        player.pauseVideo();
+
         // vid.pause();
 
       });
