@@ -9,6 +9,8 @@ var path = require("path");
 // var sio = io.listen(server);
 var port = process.env.PORT || 5000;
 
+
+var motionNum = 0;
 //app.set('port', port);
 // app.use(express.static(__dirname + "/"));
 // var server = http.createServer(app);
@@ -84,7 +86,11 @@ io.on('connection', function(socket){
   });
 
   socket.on('motion message', function(){
-    io.emit('play message', "hello");
+    if (motionNum == 0){
+      io.emit('play message', "hello");  
+      motionNum = 1;
+    }
+    motionNum = 1;
     
     console.log("motion detected");
     // io.emit('play message', "hello");
