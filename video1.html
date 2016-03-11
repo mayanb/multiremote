@@ -53,6 +53,7 @@
       socket.on('pause message', function(msg){
         console.log("pause message received");
         player.pauseVideo();
+        player.seekTo(seconds:0, allowSeekAhead:false)
         // vid.pause();
 
       });

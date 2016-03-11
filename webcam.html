@@ -1,4 +1,5 @@
 <!DOCTYPE HTML>
+<!-- motion detected adapted from RonnieSkansing -->
 <html>
 <head>
   <title>Change detection</title>
@@ -81,10 +82,14 @@ var socket = io();
         }
       }
     }
+    firstMotion = true;
     if(motionState.changed) {
       // call events
       console.log('ACTIVITY!');
-      socket.emit('motion message', "hello");
+      if (firstMotion) {
+        socket.emit('motion message', "hello");
+        // firstMotion = false;
+      }
       motionState.changed = false;
     }
     canvas.frame++;
