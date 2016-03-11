@@ -46,8 +46,8 @@
         });
       }
 
-      socket.on('pause message', function(msg){
-        console.log("pause message received");
+      socket.on('refresh message', function(msg){
+        console.log("refresh message received");
         // player.seekTo(0, false);
         player.pauseVideo();
         location.reload();

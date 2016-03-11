@@ -53,9 +53,9 @@ io.on('connection', function(socket){
     io.emit('chat message', msg);
   });
 
-  socket.on('pause message', function(){
-  	console.log("pause videos");
-  	io.emit('pause message', "hello");
+  socket.on('refresh message', function(){
+  	console.log("refresh videos");
+  	io.emit('refresh message', "hello");
   });
 
   socket.on('play message', function(){
