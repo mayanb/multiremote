@@ -48,8 +48,9 @@
 
       socket.on('pause message', function(msg){
         console.log("pause message received");
-        player.seekTo(0, false);
+        // player.seekTo(0, false);
         player.pauseVideo();
+        location.reload();
         
         // vid.pause();
       });
